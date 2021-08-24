@@ -13,4 +13,5 @@ zuul:
   routes:
     item-service: /item/** # 添加商品微服务的路由
     search-service: /search/**
+    user-service: /user/**
 

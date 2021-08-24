@@ -268,4 +268,14 @@ public class SearchService {
         }
         return result;
     }
+
+    public void saveIndex(Long spuId) throws IOException {
+        Spu spu = this.goodsClient.querySpuById(spuId);
+        Goods goods = this.buildGoods(spu);
+        this.goodsRepository.save(goods);
+    }
+
+    public void deleteIndex(Long spuId) {
+        this.goodsRepository.deleteById(spuId);
+    }
 }

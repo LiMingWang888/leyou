@@ -1,19 +1,20 @@
 server:
-  port: 8081
+  port: 8085
 spring:
   application:
-    name: item-service
+    name: user-service
   datasource:
-    url: jdbc:mysql:///hm53
+    url: jdbc:mysql://127.0.0.1:3306/hm53
     username: root
     password: 123
-  rabbitmq:
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
     host: 192.168.199.129
+  rabbitmq:
     virtual-host: /leyou
     username: leyou
     password: leyou
-    template:
-      exchange: LEYOU.ITEM.EXCHANGE
+    host: 192.168.199.129
 eureka:
   client:
     service-url:
@@ -21,5 +22,6 @@ eureka:
   instance:
     lease-renewal-interval-in-seconds: 5
     lease-expiration-duration-in-seconds: 15
+
 mybatis:
-  type-aliases-package: com.leyou.item.pojo
+  type-aliases-package: com.leyou.user.pojo

@@ -5,7 +5,6 @@ import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import javax.crypto.interfaces.PBEKey;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
@@ -42,5 +41,10 @@ public class GoodsHtmlService {
                 printWriter.close();
             }
         }
+    }
+
+    public void deleteHtml(Long spuId) {
+        File file = new File("C:\\hm53\\tools\\nginx-1.14.0\\html\\item\\" + spuId + ".html");
+        file.deleteOnExit();
     }
 }
